@@ -1,32 +1,22 @@
-Smash Prep v0.1.9
+Smash Prep v0.2.0
 
-スマブラSPの大会ごとに、参加プレイヤー・使用キャラ・対策メモを整理する個人用Webアプリです。
+スマブラSP大会向けの対策メモPWAです。
 
-■ v0.1.9
-- 正式名称を「Smash Prep」に統一
-- GitHubリポジトリ名は Smash-Prep / smash-prep を想定
-- GitHub Pagesでそのまま公開できるよう、index.html等をZIP直下へ配置
-- Node / Express / Cloudflare Tunnelは不要
-- データはブラウザのlocalStorageへ保存
-- JSONバックアップ / 読込に対応
-- 旧 fresh-counter-data-v1 が同じブラウザに残っている場合は Smash Prep側へ自動移行
-- バックアップファイル名も smash-prep-backup-YYYY-MM-DD.json に変更
+GitHub Pages:
+1. このフォルダの中身をリポジトリのルートへアップロード
+2. mainへ反映
+3. GitHub ActionsのDeploy Smash Prep to GitHub Pages完了後に公開
 
-■ GitHub Pages
-このフォルダ内のファイルをGitHubリポジトリのルートへアップロードしてください。
-GitHub Pagesは main ブランチ / root を公開元にできます。
+v0.2.0:
+- GitHub Pages前提の静的構成へ整理
+- public/重複構成を廃止
+- iPhone用 apple-touch-icon 180x180 PNGを正式配置
+- PWA用192x192 / 512x512 PNGをmanifestへ登録
+- Service Workerキャッシュをv0.2.0へ更新
+- ナビゲーションはnetwork-first化して更新反映を改善
+- 既存 localStorage(smash-prep-data-v1)を維持
+- 大会・プレイヤー・複数キャラ・対策メモ・検索・並び替え・JSONバックアップ/復元を搭載
 
-■ PCで確認
-start.bat を実行してください。
-http://localhost:4173 で開きます。
-
-■ データについて
-localStorageは端末ごとなので、PCとiPhoneは自動同期しません。
-必要な場合は「バックアップ」「データ読込」でJSONを移動できます。
-
-■ v0.1.8のdata.jsonから移行
-アプリの「データ読込」から旧data.jsonを選択できます。
-
-■ キャラクター
-選択枠は現行アプリの86枠です。
-キャラ画像は同一系列のSSBU head icon参照方式を使用しています。
+注意:
+- データは端末/ブラウザごとのlocalStorage保存です。PCとiPhone間で自動同期はしません。
+- キャラクター画像は現在外部参照です。画像取得失敗時も名前で選択できます。
