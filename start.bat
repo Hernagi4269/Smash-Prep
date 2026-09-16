@@ -1,6 +1,6 @@
 @echo off
-cd /d "%~dp0public"
-echo Smash Counter v0.1.9
+cd /d "%~dp0"
+echo Smash Prep v0.1.9
 where py >nul 2>nul
 if %errorlevel%==0 (
   start "" http://localhost:4173

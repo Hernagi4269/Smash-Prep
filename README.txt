@@ -1,31 +1,32 @@
-スマブラ大会対策リスト v0.1.9
+Smash Prep v0.1.9
 
-■ 今回の方針
-- v0.1.8 の Node/Express + PC保存方式を廃止し、静的Webアプリへ整理しました。
-- データはブラウザ localStorage に保存します。
-- PCでは start.bat で確認できます。
-- 外出先では public フォルダを GitHub Pages 等のHTTPS静的ホスティングへ公開して使います。
-- Cloudflare Tunnel、ポート開放、PC常時起動は不要です。
+スマブラSPの大会ごとに、参加プレイヤー・使用キャラ・対策メモを整理する個人用Webアプリです。
 
-■ 重要：端末間同期
-localStorage は端末ごとです。PCとiPhoneのデータは自動同期しません。
-「バックアップ」「データ読込」でJSONを移動できます。
-将来自動同期が必要になった場合だけ同期機能を追加します。
+■ v0.1.9
+- 正式名称を「Smash Prep」に統一
+- GitHubリポジトリ名は Smash-Prep / smash-prep を想定
+- GitHub Pagesでそのまま公開できるよう、index.html等をZIP直下へ配置
+- Node / Express / Cloudflare Tunnelは不要
+- データはブラウザのlocalStorageへ保存
+- JSONバックアップ / 読込に対応
+- 旧 fresh-counter-data-v1 が同じブラウザに残っている場合は Smash Prep側へ自動移行
+- バックアップファイル名も smash-prep-backup-YYYY-MM-DD.json に変更
 
-■ v0.1.8 からデータを移す場合
-v0.1.8 フォルダに data.json がある場合、v0.1.9 の「データ読込」からその data.json を選択してください。
+■ GitHub Pages
+このフォルダ内のファイルをGitHubリポジトリのルートへアップロードしてください。
+GitHub Pagesは main ブランチ / root を公開元にできます。
 
-■ キャラアイコン
-キャラ選択は全86枠です。
-同一規格の Super Smash Bros. Ultimate 64x64 head icon 系列に統一しています。
-Mii 格闘・剣術・射撃は別画像、ホムラ/ヒカリは2画像を同一枠に表示します。
-画像参照元: SmashWiki Head icons (SSBU)
-https://www.ssbwiki.com/Category:Head_icons_(SSBU)
+■ PCで確認
+start.bat を実行してください。
+http://localhost:4173 で開きます。
 
-■ PC確認
-start.bat
-→ http://localhost:4173
+■ データについて
+localStorageは端末ごとなので、PCとiPhoneは自動同期しません。
+必要な場合は「バックアップ」「データ読込」でJSONを移動できます。
 
-■ 外で使うための公開
-public フォルダの中身だけを静的ホスティングへ公開してください。
-GitHub Pages を使う場合はリポジトリ直下へ public の中身を配置して Pages を有効化します。
+■ v0.1.8のdata.jsonから移行
+アプリの「データ読込」から旧data.jsonを選択できます。
+
+■ キャラクター
+選択枠は現行アプリの86枠です。
+キャラ画像は同一系列のSSBU head icon参照方式を使用しています。
