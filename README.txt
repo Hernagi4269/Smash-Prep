@@ -1,22 +1,9 @@
-Smash Prep v0.2.0
+Smash Prep v0.3.0
 
-スマブラSP大会向けの対策メモPWAです。
+- 大会一覧 → 大会詳細の2階層構造
+- 大会一覧には他大会のプレイヤー情報を表示しない
+- 完成版アイコンを新ファイル名で実装
+- iOS touch icon + PWA 192/512 + maskableを統一
+- 既存smash-prep-data-v1を維持
 
-GitHub Pages:
-1. このフォルダの中身をリポジトリのルートへアップロード
-2. mainへ反映
-3. GitHub ActionsのDeploy Smash Prep to GitHub Pages完了後に公開
-
-v0.2.0:
-- GitHub Pages前提の静的構成へ整理
-- public/重複構成を廃止
-- iPhone用 apple-touch-icon 180x180 PNGを正式配置
-- PWA用192x192 / 512x512 PNGをmanifestへ登録
-- Service Workerキャッシュをv0.2.0へ更新
-- ナビゲーションはnetwork-first化して更新反映を改善
-- 既存 localStorage(smash-prep-data-v1)を維持
-- 大会・プレイヤー・複数キャラ・対策メモ・検索・並び替え・JSONバックアップ/復元を搭載
-
-注意:
-- データは端末/ブラウザごとのlocalStorage保存です。PCとiPhone間で自動同期はしません。
-- キャラクター画像は現在外部参照です。画像取得失敗時も名前で選択できます。
+GitHubへはZIPを展開した中身をルートへ上書きしてください。
